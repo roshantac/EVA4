@@ -1,4 +1,4 @@
-File Name : 1.ipynb
+File Name : Step1.ipynb
 ++++++++++++++++++++
   1. Base model
   2. Results
@@ -10,7 +10,7 @@ base model
 
 
 ==============================================================================================
-File Name : 2.ipynb
+File Name : Step2.ipynb
 +++++++++++++++++++ 
  1. Batchnormalization
   2. Results
@@ -22,7 +22,7 @@ Reduced number of parameter by improving model
 
 
 ==============================================================================================
-File Name : 3.ipynb
+File Name : Step3.ipynb
 ++++++++++++++++++++  
 1. Batchnormalization
   2. Results
@@ -47,7 +47,7 @@ This reduced the overfitting. Training accuracy is 99.34 is achieved
 
 
 =================================================================================================
-File Name : 5.ipynb
+File Name : Step5.ipynb
 ++++++++++++++++++++
  1. Data augmentation
   2. Results
@@ -59,7 +59,7 @@ Data aumentation improved the accuracy of model, currently only slight angle cha
 
 
 ======================================================================================================
-File Name : 6.ipynb
+File Name : Step6.ipynb
 +++++++++++++++++++  
 1.  Add LR Scheduler
   2.  Results:
@@ -69,6 +69,8 @@ File Name : 6.ipynb
    3. Analysis:
         Finding a good LR schedule is hard. We have tried to make it effective by reducing LR by 10th after the 5th epoch. It did help in getting to 99.4 or more faster, but final accuracy is not more than 99.5. 
 ==================================================================================================
+File Name : Step7.ipynb
++++++++++++++++++++  
  1. Changed Step size 5
  2. 
     1. Parameters : 9994
