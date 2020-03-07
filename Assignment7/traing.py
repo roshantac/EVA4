@@ -1,6 +1,7 @@
 from tqdm import tqdm
 from torch.optim.lr_scheduler import StepLR
 import torch.optim as optim
+import torch.nn.functional as F
 train_losses = []
 test_losses = []
 train_acc = []
@@ -61,17 +62,17 @@ def test(model, device, test_loader):
     
     test_acc.append(100. * correct / len(test_loader.dataset))
 
-def Training(epochs,model):
+def Training(epochs,model,device, trainloader, testloader):
   optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.95)
   scheduler = StepLR(optimizer, step_size=6, gamma=0.1)
   for epoch in range(epochs):
       print("EPOCH:", epoch)
       train(model, device, trainloader, optimizer, epoch)
       scheduler.step()
-      test(model, device, testloader)\
+      test(model, device, testloader)
 
 
-def ClassTestAccuracy(testloader,device,model):
+def ClassTestAccuracy(testloader,device,model, classes):
   class_correct = list(0. for i in range(10))
   class_total = list(0. for i in range(10))
   with torch.no_grad():
