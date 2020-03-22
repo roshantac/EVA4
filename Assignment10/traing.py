@@ -1,5 +1,5 @@
 from tqdm import tqdm
-from torch.optim.lr_scheduler import StepLR
+from torch.optim.lr_scheduler import StepLR, ReduceLROnPlateau
 import torch.optim as optim
 import torch.nn.functional as F
 import torch.nn as nn
@@ -62,15 +62,17 @@ def test(model, device, test_loader):
         100. * correct / len(test_loader.dataset)))
     
     #test_acc.append(100. * correct / len(test_loader.dataset))
+    return test_loss
 
 def Training(epochs,model,device, trainloader, testloader):
+  Testloss = 0
   optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.95)
-  scheduler = StepLR(optimizer, step_size=6, gamma=0.1)
+  scheduler = ReduceLROnPlateau(optimizer, 'min')#StepLR(optimizer, step_size=6, gamma=0.1)
   for epoch in range(epochs):
       print("EPOCH:", epoch)
       train(model, device, trainloader, optimizer, epoch)
-      scheduler.step()
-      test(model, device, testloader)
+      Testloss = test(model, device, testloader)
+      scheduler.step(Testloss)
 
 
 def ClassTestAccuracy(testloader,device,model, classes):
