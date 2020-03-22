@@ -3,7 +3,7 @@ import PIL
 import numpy as np
 from torchvision import transforms
 from utils import visualize_cam
-from gradCam import GradCAM
+from gradCam_def import GradCAM
 from Resnet import *
 
 def show_map():
