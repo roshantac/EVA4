@@ -1,31 +1,14 @@
 import torch
 import torch.nn.functional as F
-
 from utils import layer_finders
-
+import PIL
+import numpy as np
+from torchvision import transforms
+from utils import visualize_cam
+from model import *
 
 class GradCAM:
-    """Calculate GradCAM salinecy map.
-    Args:
-        input: input image with shape of (1, 3, H, W)
-        class_idx (int): class index for calculating GradCAM.
-                If not specified, the class index that makes the highest model prediction score will be used.
-    Return:
-        mask: saliency map of the same spatial dimension with input
-        logit: model output
-    A simple example:
-        # initialize a model, model_dict and gradcam
-        resnet = torchvision.models.resnet101(pretrained=True)
-        resnet.eval()
-        gradcam = GradCAM.from_config(model_type='resnet', arch=resnet, layer_name='layer4')
-        # get an image and normalize with mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)
-        img = load_img()
-        normed_img = normalizer(img)
-        # get a GradCAM saliency map on the class index 10.
-        mask, logit = gradcam(normed_img, class_idx=10)
-        # make heatmap from mask and synthesize saliency map using heatmap and img
-        heatmap, cam_result = visualize_cam(mask, img)
-    """
+
 
     def __init__(self, arch: torch.nn.Module, target_layer: torch.nn.Module):
         self.model_arch = arch
@@ -81,4 +64,19 @@ class GradCAM:
 
     def __call__(self, input, class_idx=None, retain_graph=False):
         return self.forward(input, class_idx, retain_graph)
+
+
+
+
+def show_map():
+    target_model = ResNet18()
+    gradcam = GradCAM.from_config(model_type='resnet', arch=target_model, layer_name='layer4')
+    img=PIL.Image.open('test.jpg')
+    img =  transforms.Compose([transforms.Resize((32, 32)), transforms.ToTensor()])(img)
+    img = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])(img)[None]
+    mask, logit = gradcam(img)#class_idx=10
+    heatmap, cam_result = visualize_cam(mask, img)
+    return heatmap, cam_result
+   
+
 
