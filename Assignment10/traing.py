@@ -120,6 +120,25 @@ def ClassTestAccuracy(testloader,device,model, classes):
   for i in range(10):
       print('Accuracy of %5s : %2d %%' % (
           classes[i], 100 * class_correct[i] / class_total[i]))
+def MissClassifedImage(dataSet, dispCount):
+  dataiter = iter(dataSet)
+  import matplotlib.pyplot as plt
+  import numpy as np
+  fig, axs = plt.subplots(dispCount,1,figsize=(45,45))
+  count =0
+  while True:
+      if count >= dispCount:
+        break
+      images, labels = dataiter.next()
+      output = net(images)
+      a, predicted = torch.max(output, 1) 
+      if(labels != predicted):
+        images =images.squeeze()  
+        images = np.transpose(images, (1, 2, 0))
+        axs[count].imshow(images)
+        axs[count].set_title("Orig: "+str(classes[labels])+", Pred: "+str(classes[predicted]))
+        count = count +1
+  plt.show()
 
 
 
