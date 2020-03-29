@@ -120,25 +120,34 @@ def ClassTestAccuracy(testloader,device,model, classes):
   for i in range(10):
       print('Accuracy of %5s : %2d %%' % (
           classes[i], 100 * class_correct[i] / class_total[i]))
-def MissClassifedImage(dataSet, dispCount):
+def MissClassifedImage(dataSet, model, dispCount,classes):
   dataiter = iter(dataSet)
   import matplotlib.pyplot as plt
   import numpy as np
-  fig, axs = plt.subplots(dispCount,1,figsize=(45,45))
+  from GradCam import show_map
+  import matplotlib.pyplot as plt
+
+
+  fig, axs = plt.subplots(dispCount,3,figsize=(10,60))
   count =0
   while True:
       if count >= dispCount:
         break
       images, labels = dataiter.next()
-      output = net(images)
+      output = model(images)
       a, predicted = torch.max(output, 1) 
       if(labels != predicted):
-        images =images.squeeze()  
+        images = images.squeeze()  
+        heat_map, result = show_map(images)
+        heat_map = np.transpose(heat_map, (1, 2, 0))
+        result = np.transpose(result, (1, 2, 0))
         images = np.transpose(images, (1, 2, 0))
-        axs[count].imshow(images)
-        axs[count].set_title("Orig: "+str(classes[labels])+", Pred: "+str(classes[predicted]))
+        axs[count,0].imshow(images)
+        axs[count,1].imshow(heat_map)
+        axs[count,2].imshow(result)
+        axs[count,0].set_title("Orig: "+str(classes[labels])+", Pred: "+str(classes[predicted]))
+        fig.tight_layout(pad=3.0)
         count = count +1
   plt.show()
-
 
 
