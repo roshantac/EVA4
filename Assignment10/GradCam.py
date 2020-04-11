@@ -69,7 +69,11 @@ class GradCAM:
 
 
 def show_map(img,model):
+<<<<<<< HEAD
     target_model = model
+=======
+    target_model = model# ResNet18()
+>>>>>>> 901a3b5cac6f7a8579010e301ee09bdcb2dae693
     gradcam = GradCAM.from_config(model_type='resnet', arch=target_model, layer_name='layer4')
     img = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])(img)[None] #
     mask, logit = gradcam(img)

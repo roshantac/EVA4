@@ -134,18 +134,32 @@ def MissClassifedImage(dataSet, model,device, dispCount,classes):
       if count >= dispCount:
         break
       images, labels = dataiter.next()
+<<<<<<< HEAD
       imagex = images
+=======
+>>>>>>> 901a3b5cac6f7a8579010e301ee09bdcb2dae693
       images, labels = images.to(device), labels.to(device)
       model= model.to(device)
       output = model(images)
+      imagex = images
       a, predicted = torch.max(output, 1) 
       if(labels != predicted):
+<<<<<<< HEAD
         imagex = imagex.squeeze()  
         heat_map, result = show_map(imagex)
         heat_map = np.transpose(heat_map, (1, 2, 0))
         result = np.transpose(result, (1, 2, 0))
         imagex = np.transpose(imagex, (1, 2, 0))
         axs[count,0].imshow(imagex)
+=======
+        images = images.squeeze()  
+        heat_map, result = show_map(images,model)
+        heat_map = np.transpose(heat_map, (1, 2, 0))
+        result = np.transpose(result, (1, 2, 0))
+        images =images.cpu()
+        images = np.transpose(images, (1, 2, 0))
+        axs[count,0].imshow(images)
+>>>>>>> 901a3b5cac6f7a8579010e301ee09bdcb2dae693
         axs[count,1].imshow(heat_map)
         axs[count,2].imshow(result)
         axs[count,0].set_title("Orig: "+str(classes[labels])+", Pred: "+str(classes[predicted]))
