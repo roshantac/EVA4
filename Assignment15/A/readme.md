@@ -45,15 +45,15 @@ for doing this i went through various blogs, initially i tried image addition bu
 My image placement was not random, its clearly calculated and it will give placement of image at distinct locations. for this i was not able use fixed locations since size of the images are varying. so initially resize the Background image to 600x600(otherwise in high resolution images we wont be able to notice even placemet of foreground image and in lover reolution images we wont be able to place larger forground images), but still forground images will vary in size so before overlaying if the forground image resolution is greater than that of background then forground resolution will be halved. Inorder to get location i have decided to have 5 location in the width and 4 locations in the height. so with all combination together i can have 20 locations.  
 so starting location of image overlaying was at (0,0) the X(width) and Y(height) are updated(adding) by adding factors
 
- ***X = X+X_facor***
+ ***X = X + X_facor***
  
  ***Y = Y + Y_factor***
   
   since we want 5 location along width and (0,0) we know already 4 more location are to be found in X direction and 3 in Y direction.
   
-  ***X_factor = (width of background - width of foreground)/4***
+  ***X_factor = (width of background - width of foreground) / 4***
   
-  ***Y_factor = (Height of background - Height of foreground)/3***
+  ***Y_factor = (Height of background - Height of foreground) / 3***
   
   
 For creating mask, created an image of same dimension as background image, and overlayed the mask in the same location of image placement.
