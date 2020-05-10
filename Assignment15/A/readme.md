@@ -41,4 +41,12 @@ so starting location of image overlaying was at (0,0) the X(width) and Y(height)
   ## Y_factor = (Height of background - Height of foreground)/3
   
   
+For creating mask, created an image of same dimension as background image, and overlayed the mask in the same location of image placement.
+
+# Storage issue
+after placement images are converted to 240x320 dimension since for depth map creation we require image of dimension 480x640. so from 240x320 dimension i can scale linearly. But after generating 400k+400k images, its size was around 13 GB which is very difficult to manage with limited storage and computing power. I have discussed with my friends even they were having same issue and in the later Eva session rohan has clearly explained the size used by PNG and JPG format so that reduced my size of data to some extend. but still it was around 6 GB, on searching in the internet i have found one more parameter that we can specify in the imwrite that is the quality factor. default its value is set to 95 so i changed its value to 25 hence i got images with very less size and together mask and fgbg was only around 2GB.
+
+### Using jpg for storage and Changing Quality factor while writing images will significantly reduce size of the image.
+
+
 
