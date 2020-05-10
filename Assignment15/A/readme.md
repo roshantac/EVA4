@@ -24,14 +24,18 @@ The first task was to download images, so went to google images and downloaded v
 
 Removing background:- I was absolutely lazy to learn gimp so i found interesting website which gave cool results https://www.remove.bg/
 
-Next challenge was creating the mask, almost i spend 1 week time on this. we can do it with gimp( i heard from you) but its too boring so i started to search some opencv code that will do this. after several search i have end up with morphological extraction functins in opencv. and it required kernel values as input after many trials i found 5x5 is best suited for my images, nd it was giving good resuls. Another advantage here was even i was able to create negative mask and etc with this.
+## Mask Creation
+Next challenge was creating the mask, almost i spend 1 week time on this, we can do it with gimp but frankly i so lazy to work with gimp and its too boring for me, so i started to search some opencv code that will do this. after several search i have end up with morphological extraction functins in opencv, and it required kernel values as input after many trials i found 5x5 is best suited for my images, nd it was giving good resuls. Another advantage here was even i was able to create negative mask and etc with this very eazily.
+
+## Image Transparancy
+This was done by doing 4 th layer( Alpha layer to the existing RGB) and putting trasparancy value to zero.
 
 Next thing was horizondal flipping of image, i have use opencv functions for this. 
 
-# Image overlaying 
+## Image overlaying 
 for doing this i went through various blogs, initially i tried image addition but i was getting color also added and forgoud image is completely different in color. Then i found that we should remove the background before doing overlaying. so i performed logical AND with negative mask in that area so that the pixel values there will become dark and added forground images there. The adding explained above was not with complete forground image instead before doing this i cropped the part of background image with same dimenstion as the forground image and i was doing the operatin on that cropped image and replacing the previous pixels with the newly created image.
 
-# Random Placement
+## Random Placement
 My image placement was not random, its clearly calculated and it will give placement of image at distinct locations. for this i was not able use fixed locations since size of the images are varying. so initially resize the Background image to 600x600(otherwise in high resolution images we wont be able to notice even placemet of foreground image and in lover reolution images we wont be able to place larger forground images), but still forground images will vary in size so before overlaying if the forground image resolution is greater than that of background then forground resolution will be halved. Inorder to get location i have decided to have 5 location in the width and 4 locations in the height. so with all combination together i can have 20 locations.  
 so starting location of image overlaying was at (0,0) the X(width) and Y(height) are updated(adding) by adding factors
  ## X = X+X_facor 
