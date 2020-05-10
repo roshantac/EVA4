@@ -49,5 +49,20 @@ after placement images are converted to 240x320 dimension since for depth map cr
 
 ### Using jpg for storage and Changing Quality factor while writing images will significantly reduce size of the image.
 
+Next task was to find the Depth map of fgbg image, for that went through the dense depth code implementation, there were some issues in the code and with exploring stack overflow i was able to resolve it within no time.
+
+i wrote a code which will take each image and resize to (480x640) and feed to the network and take its output and store, nd it was working prety fast so i went to sleep by hopping this assignment will be over by next day ..
+
+## When Google became another Jio ..
+Morning wen i woke up it has already processed around 180K images but after few time my runtime got disconnected. Hence i tried connect again but i have recieved a new pop up saying that #### i have exceeded the ussage and i should puraches Pro.
+So i wont be able to use GPU on colab but i can use CPU for my works. Hence first i though of purchasing Pro version, but at last decided to try with another google account. 
+### If you want to use Colab for long works, have multiple Google account and switch to another after longer ussage
+If you are using best GPU for long time such as Tesla v100 PCI they wont be allocating again there also you can try with different google account and some time it will work.
+
+So processing one image at a time wont be practical since in 9 hours i was only able to process nearly half the images. so i went through the discussion happening in the group and i heard about batch processing. Initially i was very lazy to check what is batch processing but now i dont have any other options too. So i have asked and understood how i can do that from batchmates. So initially i stacked 500 images and tried running, but after sometime it was crashing and but fortunately i got 25GB of RAM. Again i tried and it was working for sometime and after some time it throwed some error. and i found that it is due to excess content in the RAM. after several retry i  found that 32 is will be suited if i am using Tesla V100 PCI for my processing. So next i wanted to calulate the time taken for each batches, thanks to pythons date time libray, with that i came to know for each batch of 32 images will be taking 5 seconds for processing so processing the entire image at one time is risky.
+
+## Parallel Computing with google colab
+so i divided my 400k images into chunks of 100k images( since i cant wait for another 8 hours to get disconnect my colab) , and with 3 Google account, 4 collab notebook and two browser i started running each chunks. after 3 to 4 hours everything worked as expected i stored the output of each execution as zip file in drive. Now the pending task was merging them, separetly coppied everything to single folder and calculated mean and standard deviation. and made the final zip file with each image of size 200x200. 
+
 
 
