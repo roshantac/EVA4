@@ -49,6 +49,7 @@ so starting location of image overlaying was at (0,0) the X(width) and Y(height)
     Y = Y + Y_factor***
   
   since we want 5 location along width and (0,0) we know already 4 more location are to be found in X direction and 3 in Y direction.
+  
   ***X_factor = (width of background - width of foreground)/4
      Y_factor = (Height of background - Height of foreground)/3***
   
