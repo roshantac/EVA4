@@ -44,12 +44,12 @@ for doing this i went through various blogs, initially i tried image addition bu
 ## Random Placement
 My image placement was not random, its clearly calculated and it will give placement of image at distinct locations. for this i was not able use fixed locations since size of the images are varying. so initially resize the Background image to 600x600(otherwise in high resolution images we wont be able to notice even placemet of foreground image and in lover reolution images we wont be able to place larger forground images), but still forground images will vary in size so before overlaying if the forground image resolution is greater than that of background then forground resolution will be halved. Inorder to get location i have decided to have 5 location in the width and 4 locations in the height. so with all combination together i can have 20 locations.  
 so starting location of image overlaying was at (0,0) the X(width) and Y(height) are updated(adding) by adding factors
- ### X = X+X_facor 
- ### Y = Y + Y_factor
+ ***X = X+X_facor
+    Y = Y + Y_factor***
   
   since we want 5 location along width and (0,0) we know already 4 more location are to be found in X direction and 3 in Y direction.
-  ### X_factor = (width of background - width of foreground)/4
-  ### Y_factor = (Height of background - Height of foreground)/3
+  *** X_factor = (width of background - width of foreground)/4
+      Y_factor = (Height of background - Height of foreground)/3 ***
   
   
 For creating mask, created an image of same dimension as background image, and overlayed the mask in the same location of image placement.
@@ -64,7 +64,7 @@ Next task was to find the Depth map of fgbg image, for that went through the den
 i wrote a code which will take each image and resize to (480x640) and feed to the network and take its output and store, nd it was working prety fast so i went to sleep by hopping this assignment will be over by next day ..
 
 ## When Google became another Jio ..
-Morning wen i woke up it has already processed around 180K images but after few time my runtime got disconnected. Hence i tried connect again but i have recieved a new pop up saying that #### i have exceeded the ussage and i should puraches Pro.
+Morning wen i woke up it has already processed around 180K images but after few time my runtime got disconnected. Hence i tried connect again but i have recieved a new pop up saying that **i have exceeded the ussage and i should puraches Pro**.
 So i wont be able to use GPU on colab but i can use CPU for my works. Hence first i though of purchasing Pro version, but at last decided to try with another google account. 
 ### If you want to use Colab for long works, have multiple Google account and switch to another after longer ussage
 If you are using best GPU for long time such as Tesla v100 PCI they wont be allocating again there also you can try with different google account and some time it will work.
