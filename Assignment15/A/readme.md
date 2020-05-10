@@ -22,9 +22,9 @@ Story
 
 The first task was to download images, so went to google images and downloaded various images. As foreground selected only human being in various background.
 
-for removing background i was absolutely lazy to learn gimp so i have found interesting website which gave cool results which is https://www.remove.bg/
+Removing background:- I was absolutely lazy to learn gimp so i found interesting website which gave cool results https://www.remove.bg/
 
-Next challenge was creating the mask, almost i spend 1 week time on this. we can do it with gimp( i heard from you) but its too boring so i started to search some opencv code that will do this. after several search i have end up with morphological extraction functins in opencv. and it required kernel values as input after many trials i found 5x5 is best suited for my images. nd it was giving good resuls. nd another advantage here was even i was able to create negative mask and etc with this.
+Next challenge was creating the mask, almost i spend 1 week time on this. we can do it with gimp( i heard from you) but its too boring so i started to search some opencv code that will do this. after several search i have end up with morphological extraction functins in opencv. and it required kernel values as input after many trials i found 5x5 is best suited for my images, nd it was giving good resuls. Another advantage here was even i was able to create negative mask and etc with this.
 
 Next thing was horizondal flipping of image, i have use opencv functions for this. 
 
