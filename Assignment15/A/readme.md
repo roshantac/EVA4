@@ -26,8 +26,7 @@ std: [0.2673097911607354, 0.24659251689798323, 0.2906037084309324]
 
 Story
 ===========================================================================================================
-
-The first task was to download images, so went to google images and downloaded various images. As foreground selected only human being in various background.
+100 Forground images of human beings are selected from googlw images and high resolution background images of Room, Hotel, shopping malls, Park etc are collected 
 
 Removing background:- I was absolutely lazy to learn gimp so i found interesting website which gave cool results https://www.remove.bg/
 
