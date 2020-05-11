@@ -34,7 +34,7 @@ Removing background:- I was absolutely lazy to learn gimp so i found interesting
 Next challenge was creating the mask, almost i spend 1 week time on this, we can do it with gimp but frankly i so lazy to work with gimp and its too boring for me, so i started to search some opencv code that will do this. after several search i have end up with morphological extraction functins in opencv, and it required kernel values as input after many trials i found 5x5 is best suited for my images, nd it was giving good resuls. Another advantage here was even i was able to create negative mask and etc with this very eazily.
 
 ## Image Transparancy
-This was done by doing 4 th layer( Alpha layer to the existing RGB) and putting trasparancy value to zero.
+This was done by adding 4 th layer( Alpha layer to the existing RGB) and putting trasparancy value to zero.
 
 Next thing was horizondal flipping of image, i have use opencv functions for this. 
 
