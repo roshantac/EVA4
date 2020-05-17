@@ -78,5 +78,6 @@ So processing one image at a time wont be practical since in 9 hours i was only 
 ## Parallel Computing with google colab
 so i divided my 400k images into chunks of 100k images( since i cant wait for another 8 hours to get disconnect my colab) , and with 3 Google account, 4 collab notebook and two browser i started running each chunks. after 3 to 4 hours everything worked as expected i stored the output of each execution as zip file in drive. Now the pending task was merging them, separetly coppied everything to single folder and calculated mean and standard deviation. and made the final zip file with each image of size 200x200. 
 
+![Img1 ](fgbg/1.jpg)       ![Img2 ](fgbg/2.jpg)    ![Img3 ](fgbg/3.jpg)
 
 
