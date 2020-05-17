@@ -79,14 +79,17 @@ So processing one image at a time wont be practical since in 9 hours i was only 
 so i divided my 400k images into chunks of 100k images( since i cant wait for another 8 hours to get disconnect my colab) , and with 3 Google account, 4 collab notebook and two browser i started running each chunks. after 3 to 4 hours everything worked as expected i stored the output of each execution as zip file in drive. Now the pending task was merging them, separetly coppied everything to single folder and calculated mean and standard deviation. and made the final zip file with each image of size 200x200. 
 
 
-#Images
+# Images
 
-![Img1 ](fgbg/1.jpg) ![Img2 ](fgbg/2.jpg) ![Img3 ](fgbg/3.jpg) ![Img4 ](fgbg/4.jpg)  ![Img5 ](fgbg/5.jpg)  ![Img6 ](fgbg/6.jpg)
+![Img1 ](fgbg/1.jpg) ![Img2 ](fgbg/2.jpg) ![Img3 ](fgbg/3.jpg) ![Img4 ](fgbg/4.jpg)  ![Img5 ](fgbg/5.jpg)  ![Img6 ](fgbg/6.jpg) ![Img7 ](fgbg/7.jpg) ![Img8 ](fgbg/8.jpg) ![Img9](fgbg/9.jpg)  ![Img10 ](fgbg/10.jpg) 
 
-#Masks
-![Img1 ](mask/1.jpg) ![Img2 ](mask/2.jpg) ![Img3 ](mask/3.jpg) ![Img4 ](mask/4.jpg)  ![Img5 ](mask/5.jpg)  ![Img6 ](mask/6.jpg)
+# Masks
 
-#Depth Images
-![Img1 ](depth/1.jpg) ![Img2 ](depth/2.jpg) ![Img3 ](depth/3.jpg) ![Img4 ](depth/4.jpg)  ![Img5 ](depth/5.jpg)  ![Img6 ](depth/6.jpg)
+![Img1 ](mask/1.jpg) ![Img2 ](mask/2.jpg) ![Img3 ](mask/3.jpg) ![Img4 ](mask/4.jpg)  ![Img5 ](mask/5.jpg)  ![Img6 ](mask/6.jpg) ![Img7 ](mask/7.jpg) ![Img8 ](mask/8.jpg)  ![Img9 ](mask/9.jpg)  ![Img10 ](mask/10.jpg)
+
+# Depth Images
+
+![Img1 ](depth/1.jpg) ![Img2 ](depth/2.jpg) ![Img3 ](depth/3.jpg) ![Img4 ](depth/4.jpg)  ![Img5 ](depth/5.jpg)  ![Img6 ](depth/6.jpg) ![Img7 ](depth/7.jpg) ![Img8 ](depth/8.jpg)  ![Img9 ](depth/9.jpg)  ![Img10 ](depth/10.jpg)
+
 
 
