@@ -22,5 +22,5 @@ I was able to get good result without any augmentation statergy. I dont think au
 
 ## Training 
 Training Planned for 10 epochs, but only run for 7 epochs due to colab ussage limitations. ***Each epoch took around 1 hour 1 minute  for training, and 15 minutes for testing***
-Logs are kept very minimal in order to avoid ram overflow and browser crasshing issues. Losses will be displayed during training as Logs. Inorder to observe the testing performance at the end of each epoch Predction of Mask and Depth and also Depth ground truths are displayed.
+Logs are kept very minimal in order to avoid ram overflow and browser crasshing issues. Losses will be displayed during training as Logs. Inorder to observe the testing performance at the end of each epoch Predction of Mask, Depth and Depth ground truths are displayed.
 After training of each epoch, the weights are being stored in google drive, this is to resume training during crashing. since i was able to get good result within 7 epochs i havent resumed training after 7 epochs. 
