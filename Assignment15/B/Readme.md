@@ -53,3 +53,7 @@ After training of each epoch, the weights are being stored in google drive, this
 ### Prediction
 
 ![Img6 ](Images/mask_Pred.png)
+
+
+### ***Colab: https://github.com/roshantac/EVA4/blob/master/Assignment15/B/Depth_and_Mask_Extraction.ipynb ***
+
