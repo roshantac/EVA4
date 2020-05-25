@@ -3,6 +3,9 @@ When companies where fighting to add more and more camera to their phone google 
 
 
 ## Model
+
+![Img7 ](Images/Unet_.jpg)
+
 For selecting a model i have went through different models, A Customized version of Unet is used here, its becuase Unet giving good result for medical image segmentation and its very simple as well. Original Unet will be very heavy and require more time and resources for training and it returns only single image as output. I have tested the performance of Unet on depth and mask dataset individually and was able to get good result. Few changes are made inorder to accespt two images as input and produce two images as output and also reduced the number of channels in each layer for reducing the total number of parameters. This variant of Unet became a perfect companian for this problem.
 
 ## Optimizer
