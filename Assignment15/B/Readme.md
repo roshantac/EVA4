@@ -1,5 +1,5 @@
 # Depth and Mask Estimation
-The main challenge of this assignment was data creation which is already explained in the A part of the assignment. This gives us more insight about encoder - decoder network and image segmentation problem as well. 
+The challenging part of this assignment are data creation and Resource and time management for training. This gives us more insight about encoder - decoder network and image segmentation problem as well. 
 
 
 ## Model
@@ -25,6 +25,11 @@ Training Planned for 10 epochs, but only run for 7 epochs due to colab ussage li
 Logs are kept very minimal in order to avoid ram overflow and browser crasshing issues. Losses will be displayed during training as Logs. Inorder to observe the testing performance at the end of each epoch Predction of Mask, Depth and Depth ground truths are displayed.
 After training of each epoch, the weights are being stored in google drive, this is to resume training during crashing. since i was able to get good result within 7 epochs i havent resumed training after 7 epochs. 
 
+
+
+### Colab: https://github.com/roshantac/EVA4/blob/master/Assignment15/B/Depth_and_Mask_Extraction.ipynb 
+
+# Evaluation 
 
 ## Background Image
 
@@ -55,5 +60,5 @@ After training of each epoch, the weights are being stored in google drive, this
 ![Img6 ](Images/mask_Pred.png)
 
 
-### Colab: https://github.com/roshantac/EVA4/blob/master/Assignment15/B/Depth_and_Mask_Extraction.ipynb 
+
 
