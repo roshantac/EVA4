@@ -1,5 +1,5 @@
 # Depth and Mask Estimation
-The main challenge of this assignment was data creation which is already explained in the A part of the assignment. 
+The main challenge of this assignment was data creation which is already explained in the A part of the assignment. This gives us more insight about encoder - decoder network and image segmentation problem as well. 
 
 
 ## Model
