@@ -1,4 +1,4 @@
-# Depth and Mask Estimation
+# Monocular Depth and Mask Estimation
 When companies where fighting to add more and more camera to their phone google released their flag ship phone Pixel with single camera but smart. While others are using multiple cameras for depth photo, google where able to achieve it with single camera. Depth estimation is very common problem that has application in many field. it can be used in autonomous driving, poterate cameras and much more. This project is intented to perform two exciting challenges in the image processing. One is extracting mask of foreground from image and second is estimation of depth without directly from an image. The challenging part of this assignment are data creation and Resource( also time)  management for training. This gives us more insight about encoder - decoder network and image segmentation problem. 
 
 
